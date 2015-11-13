@@ -3,10 +3,11 @@ var outline = require('./outline.json');
 var endpoints = require('./endpoints.json');
 
 gulp.task('default', ['build', 'watch']);
-gulp.task('build', ['templateCache', 'style', 'script', 'index']);
+gulp.task('build', ['templateCache', 'style', 'script','script-electron', 'index']);
 gulp.task('watch', WatchTask);
 gulp.task('style', StyleTask);
 gulp.task('script', ScriptTask);
+gulp.task('script-electron', ScriptElectronTask);
 gulp.task('index', IndexTask);
 gulp.task('start-server', StartServerTask);
 gulp.task('reload-browser', ReloadBrowserTask);
@@ -48,6 +49,14 @@ function ScriptTask () {
 			.pipe(replace('GR-APP-TITLE', outline.name))
 			.pipe(gulpif(args.prod, uglify())).on('error', gutil.log)
 			.pipe(gulp.dest(outline.dist + '/js/')).on('error', gutil.log);
+}
+
+function ScriptElectronTask ()	{
+		return injectEndpoints(gulp.src(outline.start + '/**/*.js'))
+			.pipe(ngAnnotate())
+			.pipe(replace('GR-APP-TITLE', outline.name))
+			.pipe(gulpif(args.prod, uglify())).on('error', gutil.log)
+			.pipe(gulp.dest(outline.dist + '/start/')).on('error', gutil.log);
 }
 
 var inject = require('gulp-inject');

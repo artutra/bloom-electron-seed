@@ -1,6 +1,7 @@
 {
 	"name": "electron-test",
-	"src": "src",
+	"src": "src/app",
+	"start": "src/start",
 	"dist": "dist",
 	"test": "test"
 }
