@@ -1,5 +1,5 @@
 {
-	"name": "bloom-angular-seed",
+	"name": "electron-test",
 	"src": "src",
 	"dist": "dist",
 	"test": "test"
