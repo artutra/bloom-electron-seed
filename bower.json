@@ -1,6 +1,6 @@
 {
-  "name": "electron-test",
-  "description": "My seed angular project.",
+  "name": "bloom-electron-seed",
+  "description": "My seed electron project.",
   "version": "1.0.0",
   "private": "true",
   "dependencies": {

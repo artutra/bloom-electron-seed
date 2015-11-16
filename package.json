@@ -1,6 +1,6 @@
 {
-  "name": "bloom-js-seed",
-  "description": "My seed angular project.",
+  "name": "bloom-electron-seed",
+  "description": "My seed electron project.",
   "version": "1.0.0",
   "dependencies": {
     "nedb": "^1.4.0"
